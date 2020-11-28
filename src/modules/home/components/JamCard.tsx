@@ -5,17 +5,21 @@ import * as React from 'react';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 import moment from 'moment'
-import { Row } from 'modules/common/Elements';
+import { Col, Row } from 'modules/common/Elements';
 
-const JamCard = styled.div`
-  border-radius: 12pxl
+const JamCardWrapper = styled.div`
+  border-radius: 12px;
   color: ${WHITE};
   background-color: ${GJ_BLACK_100};
+  min-width: 260px;
+  max-width: 32%;
+  flex: 1 1 260px;
+  margin: 0 12px 12px 0;
 `
 
 const JamCardImage = styled.img`
-  border-radius: 12pxl
-  width: 100%
+  border-radius: 12px;
+  width: 100%;
   height: auto;
   object-fit: cover;
 `
@@ -24,32 +28,34 @@ interface Props {
   data: some;
 }
 
-const JamCards = (props: Props) => {
+const JamCard = (props: Props) => {
   const { data } = props
   return (
-    <JamCard>
+    <JamCardWrapper>
       <JamCardImage src={data?.coverImageUrl} alt="" />
-      <Typography variant="h6">
-        {data?.name}
-      </Typography>
-      <Typography variant="subtitle1" style={{ color: PRIMARY, marginBottom: 8 }}>
-        {data?.hostProfiles[0]?.username}
-      </Typography>
-      <Typography variant="caption">
-        {`Start in ${moment(data?.startTime)}`}
-      </Typography>
-      <LinearProgress variant="determinate" value={50} color="secondary" />
-      <Row>
-        <Typography variant="caption" style={{ marginRight: 12}}>
-          {`${data?.joinCount} Joined`}
+      <Col style={{ padding: 8 }}>
+        <Typography variant="h6">
+          {data?.name}
+        </Typography>
+        <Typography variant="subtitle2" style={{ color: PRIMARY, marginBottom: 8 }}>
+          {`Hosted by ${data?.hostProfiles[0]?.username}`}
         </Typography>
         <Typography variant="caption">
-          {`${data?.submissionCount} Submissions`}
+          {`Start in ${moment(data?.startTime).format('YYYY-MM-DD')}`}
         </Typography>
-      </Row>
-    </JamCard>
+        <LinearProgress variant="determinate" value={Math.random()*100} color="primary" />
+        <Row>
+          <Typography variant="caption" style={{ marginRight: 12}}>
+            {`${data?.joinedCount} Joined`}
+          </Typography>
+          <Typography variant="caption">
+            {`${data?.submissionCount} Submissions`}
+          </Typography>
+        </Row>
+      </Col>
+    </JamCardWrapper>
   );
 };
 
-export default JamCards;
+export default JamCard;
 
