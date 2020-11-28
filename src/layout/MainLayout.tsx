@@ -2,15 +2,15 @@ import React from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Col, PageWrapper } from 'modules/common/Elements';
-import { GREY_100 } from 'assets/theme/colors';
+import { BACK_GROUND } from 'assets/theme/colors';
 import MainHeader from './MainHeader';
 import LoadingIcon from 'modules/common/LoadingIcon';
 import { routes } from 'constants/routes';
-import Home from 'modules/home/Home';
+import Home from 'modules/home/pages/Home';
 
 const MainLayout = () => {
   return (
-    <PageWrapper style={{ background: GREY_100 }}>
+    <PageWrapper style={{ background: BACK_GROUND }}>
       <MainHeader />
       <Col
         style={{

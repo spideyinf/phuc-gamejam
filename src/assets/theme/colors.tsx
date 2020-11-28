@@ -76,8 +76,12 @@ export const {
   PINK_50,
 
   CRAYOLA,
+
+  GJ_PURPLE,
+  GJ_BLACK,
+  GJ_BLACK_100,
 } = colors;
 
-export const BACK_GROUND = BLUE_50;
-export const PRIMARY = BLUE_400;
-export const SECONDARY = ORANGE;
+export const BACK_GROUND = GJ_BLACK;
+export const PRIMARY = GJ_PURPLE;
+export const SECONDARY = GJ_BLACK;
