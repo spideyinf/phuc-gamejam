@@ -1,0 +1,15 @@
+{
+  "IDS_CHANGE_LANGUAGE": "Thay đổi ngôn ngữ",
+  "IDS_LOGIN_SYSTEM": "Đăng nhập hệ thống",
+  "IDS_SAVE_INFO": "Lưu thông tin",
+  "IDS_LOGIN": "Đăng nhập",
+  "IDS_FORGOT_PASSWORD": "Bạn quên mật khẩu?",
+  "IDS_HAVE_NOT_ACCOUNT": "Bạn chưa có tài khoản?",
+  "IDS_LICENSE": "©2020 VNTravel Group. All rights reserved",
+  "IDS_SIGN_UP_NOW": "Đăng ký ngay tại đây",
+  "IDS_EMAIL": "Email",
+  "IDS_ENTER_EMAIL": "Nhập email",
+  "IDS_PASSWORD": "Mật khẩu",
+  "IDS_ENTER_PASSWORD": "Nhập mật khẩu",
+  "IDS_NOT_FOUND": "Not found"
+}
