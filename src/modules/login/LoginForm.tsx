@@ -32,17 +32,19 @@ const LoginForm: React.FC<RouteComponentProps<any> & Props> = (props) => {
   const onSubmit = async (data) => {
     try {
       setLoading(true);
-      const res: some = await actionLogin(data);
-      if (res?.code === SUCCESS_CODE) {
-        cookie.set(ACCESS_TOKEN, res?.access_token);
-        props?.history?.push(routes.HOME);
-        dispatch(actionUpdateProfile(res?.data));
-      } else {
-        enqueueSnackbar(
-          res?.message,
-          snackbarSetting((key) => closeSnackbar(key), { color: 'error' })
-        );
-      }
+      // const res: some = await actionLogin(data);
+      // if (res?.code === SUCCESS_CODE) {
+      //   cookie.set(ACCESS_TOKEN, res?.access_token);
+      //   props?.history?.push(routes.HOME);
+      //   dispatch(actionUpdateProfile(res?.data));
+      // } else {
+      //   enqueueSnackbar(
+      //     res?.message,
+      //     snackbarSetting((key) => closeSnackbar(key), { color: 'error' })
+      //   );
+      // }
+      cookie.set(ACCESS_TOKEN, '123');
+      props?.history?.push(routes.HOME);
     } catch (error) {
     } finally {
       setLoading(false);
